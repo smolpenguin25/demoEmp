@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Employee 
+        link(rel="stylesheet", href="/stylesheets/table_style.css")
+    body 
+        h1 Employee List
+        h3 
+            a(href="/emp/create") Create Employee
+        h3 
+            a(href="/emp/login") Login
+        div(style="margin-bottom: 10px;")
+            form(action="/emp/search" method="get")
+                label Keyword:
+                input(type="text" name="keyword")
+                input(type="submit" value="Search")
+        table
+            thead
+                tr
+                    th Name
+                    th Email
+                    th Phone
+                    th Role
+                    th Action
+            tbody
+                if emps != null && emps.length > 0
+                    each emp in emps
+                        tr
+                            td= emp.name
+                            td= emp.email
+                            td= emp.phone
+                            td= emp.role
+                            td
+                                a(href="/emp/edit/#{emp.id}") Edit
+                                a(href="/emp/delete/#{emp.id}") Delete
+                else
+                    tr
+                        td(colspan="4") No record found

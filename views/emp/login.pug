@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Login
+        link(rel="stylesheet", href="/stylesheets/form_style.css")
+    body 
+        h1(style="text-align: center;") Login
+        h3(style="text-align: center; color: red;")
+            if message
+                p #{message}
+        a(href="/emp" style="position: absolute; top: 10px; left: 10px;") Back
+        form(action="/emp/login" method="post")
+            div
+                label(for="email") Email:
+                input(type="email" name="email" id="email")
+            div 
+                label(for="pwd") Password:
+                input(type="password" name="pwd" id="pwd")
+            div
+                input(type="submit" value="Login")

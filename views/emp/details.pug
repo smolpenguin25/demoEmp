@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Employee Details
+        link(rel="stylesheet", href="/stylesheets/table_style.css")
+    body 
+        h1 Employee Details
+        table 
+            tr
+                td Name:
+                td= emp.name
+            tr
+                td Email:
+                td= emp.email
+            tr
+                td Phone:
+                td= emp.phone
+            tr
+                td Role:
+                td= emp.role
+        a(href="/emp" style="margin-top: 10px;") Back

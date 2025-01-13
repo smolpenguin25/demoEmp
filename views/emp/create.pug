@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Create Employee
+        link(rel="stylesheet", href="/stylesheets/form_style.css")
+    body
+        h1(style="text-align: center;") Create Employee
+        a(href="/emp" style="position: absolute; top: 10px; left: 10px;") Back
+        form(action="/emp/create" method="post")
+            div
+                label(for="name") Name:
+                input(type="text" name="name" id="name")
+            div
+                label(for="email") Email:
+                input(type="email" name="email" id="email")
+            div 
+                label(for="pwd") Password:
+                input(type="password" name="pwd" id="pwd")
+            div 
+                label(for="confirm") Confirm Password:
+                input(type="password" name="confirm" id="confirm")
+            div
+                label(for="phone") Phone:
+                input(type="text" name="phone" id="phone")
+            div 
+                label(for="role") Role:
+                select(name="role" id="role")
+                    option(value="admin") Admin
+                    option(value="user") User
+            div
+                input(type="submit" value="Create") 
