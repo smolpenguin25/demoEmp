@@ -62,7 +62,7 @@ router.get('/search', async (req, res) => {
   try{
     const { keyword } = req.query;
     //const keyword = req.query.keyword;
-    const emps = await EmpModel.find({ $and: [{role: 'user'}, {name: keyword}]}); //find filtered user
+    const emps = await EmpModel.find({ $and: [{name: keyword}]}); //find filtered user
     return res.render('emp/index', { emps });
   }catch(err){
     return res.render('error', { message: err.message });
